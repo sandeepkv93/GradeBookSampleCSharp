@@ -15,10 +15,11 @@ namespace Grades
             book.AddGrade(85.5);
             book.AddGrade(75.5);
             GradeStatistics stats = book.ComputeStatistics();
-            Console.WriteLine("Average Grade "+stats.AverageGrade);
-
-            Console.WriteLine(stats.HighestGrade);
-            Console.WriteLine(stats.LowestGrade);
+            Console.WriteLine("List of Grades in the Grade Book");
+            book.DisplayGradeBook();
+            Console.WriteLine("Average Grade " + stats.AverageGrade);
+            Console.WriteLine("Highest Grade " + stats.HighestGrade);
+            Console.WriteLine("Lowest Grade " + stats.LowestGrade);
         }
     }
 }

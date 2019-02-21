@@ -21,15 +21,16 @@ namespace Grades
         public GradeStatistics ComputeStatistics()
         {
             GradeStatistics stats = new GradeStatistics();
-            double sum = 0;
-            foreach(double grade in grades)
-            {
-                stats.HighestGrade = Math.Max(stats.HighestGrade, grade);
-                stats.LowestGrade = Math.Min(stats.LowestGrade, grade);
-                sum += grade;
-            }
+            double sum = grades.AsParallel().Aggregate((x, y) => x + y);
+            stats.HighestGrade = grades.Max();
+            stats.LowestGrade = grades.Min();
             stats.AverageGrade = sum / grades.Count;
             return stats;
+        }
+
+        public void DisplayGradeBook()
+        {
+            grades.ForEach(grade => Console.WriteLine(grade));
         }
     }
 }
