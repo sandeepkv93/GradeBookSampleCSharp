@@ -9,6 +9,7 @@ namespace Grades
     public class GradeBook
     {
         List<double> grades;
+        public string Name;
         public GradeBook()
         {
             grades = new List<double>();
