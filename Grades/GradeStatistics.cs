@@ -12,10 +12,6 @@ namespace Grades
         public double AverageGrade;
         public double HighestGrade;
         public double LowestGrade;
-        public GradeStatistics()
-        {
-            this.HighestGrade = 0.0;
-            this.LowestGrade = double.MaxValue;
-        }
+        public double MedianGrade;
     }
 }

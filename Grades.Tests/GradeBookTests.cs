@@ -40,5 +40,18 @@ namespace Grades.Tests
             Assert.AreEqual(85.16, result.AverageGrade, 0.01);
         }
 
+        [TestMethod]
+        public void ComputeMedianGrade()
+        {
+            GradeBook book = new GradeBook();
+            book.AddGrade(91);
+            book.AddGrade(85);
+            book.AddGrade(75);
+            book.AddGrade(10);
+            book.AddGrade(90);
+            GradeStatistics result = book.ComputeStatistics();
+            Assert.AreEqual(85, result.MedianGrade);
+        }
+
     }
 }
